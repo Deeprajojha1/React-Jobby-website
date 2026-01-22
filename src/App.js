@@ -1,4 +1,4 @@
-import {Route, Switch, Redirect} from 'react-router-dom'
+import {Routes, Route} from 'react-router-dom'
 
 import LoginForm from './components/LoginForm'
 import Home from './components/Home'
@@ -10,16 +10,21 @@ import ProtectedRoute from './components/ProtectedRoute'
 import './App.css'
 
 const App = () => (
-  <>
-    <Switch>
-      <Route exact path="/login" component={LoginForm} />
-      <ProtectedRoute exact path="/" component={Home} />
-      <ProtectedRoute exact path="/jobs" component={Jobs} />
-      <ProtectedRoute exact path="/jobs/:id" component={JobItemDetails} />
-      <Route path="/not-found" component={NotFound} />
-      <Redirect to="not-found" />
-    </Switch>
-  </>
+  <Routes>
+    {/* Public Route */}
+    <Route path="/login" element={<LoginForm />} />
+
+    {/* Protected Routes */}
+    <Route element={<ProtectedRoute />}>
+      <Route path="/" element={<Home />} />
+      <Route path="/jobs" element={<Jobs />} />
+      <Route path="/jobs/:id" element={<JobItemDetails />} />
+    </Route>
+
+    {/* Not Found */}
+    <Route path="/not-found" element={<NotFound />} />
+
+     </Routes>
 )
 
 export default App

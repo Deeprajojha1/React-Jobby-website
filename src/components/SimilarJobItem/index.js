@@ -12,6 +12,7 @@ const SimilarJobItem = props => {
     rating,
     title,
   } = jobDetails
+
   return (
     <li className="similar-job-item">
       <div className="logo-title-location-container">
@@ -29,8 +30,10 @@ const SimilarJobItem = props => {
             </div>
           </div>
         </div>
+
         <h1 className="description-heading">Description</h1>
         <p className="description-text">{jobDescription}</p>
+
         <div className="location-employee-container">
           <div className="location-container">
             <MdLocationOn className="location-icon" />
@@ -45,4 +48,5 @@ const SimilarJobItem = props => {
     </li>
   )
 }
+
 export default SimilarJobItem

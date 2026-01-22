@@ -28,6 +28,7 @@ const FiltersGroup = props => {
           id="searchInput"
           className="search-input"
           placeholder="Search"
+          role="searchbox"
           value={searchInput}
           onChange={onChangeSearchInput}
           onKeyDown={onEnterSearchInput}

@@ -15,9 +15,10 @@ const JobCard = props => {
     title,
     id,
   } = jobData
+
   return (
-    <Link to={`/jobs/${id}`} className="link-item">
-      <li className="job-item">
+    <li className="job-item">
+      <Link to={`/jobs/${id}`} className="link-item">
         <div className="logo-title-location-container">
           <div className="logo-title-container">
             <img
@@ -33,6 +34,7 @@ const JobCard = props => {
               </div>
             </div>
           </div>
+
           <div className="location-package-container">
             <div className="location-employee-container">
               <div className="location-container">
@@ -47,11 +49,13 @@ const JobCard = props => {
             <p className="package-heading">{packagePerAnnum}</p>
           </div>
         </div>
+
         <hr className="line" />
         <h1 className="description-heading">Description</h1>
         <p className="description-text">{jobDescription}</p>
-      </li>
-    </Link>
+      </Link>
+    </li>
   )
 }
+
 export default JobCard
